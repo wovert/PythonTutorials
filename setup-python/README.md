@@ -3,6 +3,11 @@
 ## Python 语言环境集成开发环境
 [Python 官方下载](http://python.org)
 [Pycharm 下载](http://jetbrains.com)
+- pycharm 配置
+Settings->Editor->File and Code Templats -> Python Script
+#__author__ = '${USER}'
+#date = ${DATE}
+
 
 ##  执行 Python 方法
 - 方法1
