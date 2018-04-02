@@ -7,10 +7,16 @@ age = input("Age:")
 job = input("Job:")
 salary = input("Salary:")
 
+try:
+    number = float(salary)
+except ValueError:
+    print("not a float datatype")
+    exit()
+
 msg = '''
 ------ info of User -----
 Name: %s
-Age: %i
+Age: %d
 Job: %s
 Salary: %.2f
 ------ end --------
