@@ -8,6 +8,7 @@
 - [函数](./function/)
 - [文件](./file/)
 - [模块](./modules/)
+- [字符集](./charset/)
 - [django](./django/)
 
 
