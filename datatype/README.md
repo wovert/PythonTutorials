@@ -94,7 +94,7 @@ bin(18) => 0b10001 => 5 bit
 
 `__le__()` 小于等于
 
-`help(10), help(int)`
+`help(10), help(int)` 帮助函数
 
 ### 长整型 long (不可变类型), Python3 不支持
 
