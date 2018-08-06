@@ -15,7 +15,7 @@ Settings->Editor->File and Code Templats -> Python Script
 #date = ${DATE}
 ```
 
-##  执行 Python 方法
+## 执行 Python 方法
 
 ### 方法1
 
@@ -64,8 +64,8 @@ Settings->Editor->File and Code Templats -> Python Script
 
 - 3.x 默认编码是 **UNICODE** (支持中文)
 
-- 1980年(6700+)    gb2312 
-- 1995年(20k)      GBK 
+- 1980年(6700+)    gb2312
+- 1995年(20k)      GBK
 - 2000年(27k)      gb18030（包括繁体字）
 - big5 台湾
 
@@ -117,9 +117,10 @@ Settings->Editor->File and Code Templats -> Python Script
 
 - 查看可安装的版本
 
-``` 
+``` shell
 # pyenv intsall --list`
 ```
+
 2.7.8 # Python 2最新版本
 
 3.4.1 # Python 3最新版本
@@ -147,15 +148,17 @@ Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站
 
 - 设置全局 Python 版本
 
-`# pyenv global 3.5.4`
-
-`# pyenv version`
+``` shell
+# pyenv global 3.5.4
+# pyenv version
+```
 
 - 临时改变 Python 版本
 
-`# pyenv local`
-
-`# pyenv shell`
+``` shell
+# pyenv local
+# pyenv shell
+```
 
 - 切换的 Python 版本
 
@@ -167,9 +170,12 @@ Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站
 
 - 示例代码
 
-`# mkdir python354 && cd python354`
+``` shell
+# mkdir python354 && cd python354
+# pyenv local 3.5.4```
+```
 
-`# pyenv local 3.5.4` 当前工作目录使用 Python 3.5.4 版本
+当前工作目录使用 Python 3.5.4 版本
 
 `# python -V` 查看版本
 
@@ -230,9 +236,11 @@ create env
 
 Setup:
 
-`# git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv`
+``` shell
+# git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
-`# echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile`
+# echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+```
 
 Create virtualenv: `# pyenv virtualenv 版本号 虚拟环境名称`
 
@@ -242,17 +250,18 @@ Delete virtualenv:`# pyenv uninstall 虚拟环境名称`
 
 激活/禁用 virtualenv
 
-`# pyenv active <virtualev-name>`
-
-`# pyenv deactivate`
+``` shell
+# pyenv active <virtualev-name>
+# pyenv deactivate
+```
 
 Create Virtual Env
 
-`# pyenv virtualenv 3.5.4 venv-3.5.4`
-
-`# mkdir myproject && cd myproject`
-
-`# pyenv local venv-3.5.4`
+``` shell
+# pyenv virtualenv 3.5.4 venv-3.5.4
+# mkdir myproject && cd myproject
+# pyenv local venv-3.5.4
+```
 
 pyenv-virtualenv: `deactivate`
 
@@ -264,15 +273,17 @@ pyenv-virtualenv: `activate venv-3.5.1`
 
 ### 安装 ipython
 
-`# yum -y install ipython`
-
-`# yum -y install ipython3`
+``` shell
+# yum -y install ipython
+# yum -y install ipython3
+```
 
 ### Python 性能优化工具
 
 #### Psyco
 
 > Python语言的一个扩展模块，可以即时对程序代码进行专业的算法优化，可以在一定程度上提高程序的执行效率，尤其是在进程中大量循环操作时
+
 目前开发已经停止，有PyPy所接替
 
 #### PyPy
@@ -333,14 +344,16 @@ pdb.run("test(11,22)")
 
 程序里埋点
 
-``` Pyton
+``` Python
 impor pdb
 pdb.set_trace()
 ```
 
-`$ python3 name.py`
+``` sshell
+$ python3 name.py
+```
 
-自动停在pdb.run("test(11,22)")之上
+自动停在 `pdb.run("test(11,22)")` 之上
 
 日志调试
 
