@@ -58,7 +58,7 @@
 
 - 从最高到最低优先级的所有运算符
 
-```
+``` python
 运算符           描述
 **                指数 (最高优先级)
 ~ + -             按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@)
@@ -73,4 +73,21 @@
 is is not         身份运算符
 in not in         成员运算符
 not or and        逻辑运算符
+```
+
+``` Python
+'''  x or y x Ture, return x '''
+print(1 or 2) # 1
+print(3 or 2) # 3
+print(0 or 2) # 2
+print(0 or 100) # 100
+
+''' x and y x true,return y '''
+print(1 and 2) # 2
+print(0 and 2) # 0
+
+print(0 or 4 and 3 or 2) # 优先级 4 and 3, 0 or 3 or 2 => 2
+
+print(1 > 2 and 3 or 4 and 3 < 2) # False
+print(2 or 1 < 3 and 2) # 2
 ```

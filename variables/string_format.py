@@ -19,6 +19,7 @@ Name: %s
 Age: %d
 Job: %s
 Salary: %.2f
+rate:3%%
 ------ end --------
 ''' % (name, int(age), job, float(salary))
 
