@@ -202,6 +202,9 @@ str.split(" ",2)# ['hello', 'world', 'hello hi ho are you']
 ```
 
 ### 单词首字母大写：title
+
+> 以特殊字符作为分隔符作为单词边界
+
 `str.title()    # Hello World Hello Hi Ho Are You`
 
 ### 串前缀开始、后缀结束：startswith,endswith
@@ -216,6 +219,10 @@ str.endswith("you")      # True
 1. 检查后缀名
 2. 检查内容
 
+### 单词首字母大写
+
+`str.capitalize()`
+
 ### 大小写转换：lower,upper
 
 ``` Python
@@ -225,7 +232,12 @@ str.upper()    # HELLO WORLD HELLO HI HO ARE YOU
 
 ### tab键个数
 
-`str.expandtabs(tabsize=20)`
+`'hello\t word'.expandtabs(tabsize=20)`
+
+``` Python
+'hello\t world'.expandtabs(20)
+'hello\t world'.expandtabs(20)
+```
 
 ### 对齐：ljust,rjust,center
 
@@ -234,6 +246,9 @@ s="hi"
 左对齐：str.ljust(5)  # "hi   "
 右对齐：str.rjust(5)  # "   hi"
 中对齐：str.center(5) # " hi  "
+
+'hello world How are you?'.center(50,'*')
+'*************hello world How are you?*************'
 ```
 
 ### 修剪：lstrip,rstrip,strip
@@ -297,6 +312,8 @@ s.join(li)`      # a=b=c
 ```
 
 ## 元组 tuple
+
+> 只读列表
 
 ### 定义元组
 
@@ -390,6 +407,8 @@ ASCII码顺序：数字,特殊字符，字母
 ### 降序
 
 `name_list.sort(reverse=True)`
+
+### range()
 
 ## 字典 dict (可变类型)
 
