@@ -7,10 +7,10 @@
 # outer()
  
 def outer():
-    a = 1
-    def inner():
-        print(a)
-    return inner
+  a = 1
+  def inner():
+    print(a)
+  return inner
 inn = outer()
 inn()
  
@@ -26,11 +26,11 @@ from urllib.request import urlopen
 # get_url()
  
 def get_url():
-    url = 'http://www.xiaohua100.cn/index.html'
-    def get():
-        ret = urlopen(url).read()
-        print(ret)
-    return get
+  url = 'http://www.xiaohua100.cn/index.html'
+  def get():
+    ret = urlopen(url).read()
+    print(ret)
+  return get
  
 get_func = get_url()
 get_func()
