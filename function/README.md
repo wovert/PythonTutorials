@@ -108,5 +108,3 @@ fun(3) # {1:'v',2:'v',3:'v'}
 
 LEGB: Local < Enclosing < Global < Builtin
 
-## 装饰器
-
