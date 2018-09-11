@@ -84,7 +84,7 @@ bin(18) => 0b10001 => 5 bit
 
 `abs()` 内部创建数组对象并调用__abs__()数字方法
 
-`__add__(y)` 加号运算
+`__add__(y)` 加号运算, 等于加号`+`
 
 `__divmod__(y)` 返回元祖，分页场景使用
 
@@ -533,4 +533,47 @@ set(变量)
 ``` python
 s = set([1,2,33,33,2,1,4,11,11,11])
 li = list(s)
+```
+
+### 查看方法
+
+``` python
+# 告诉我列表拥有的所有方法
+print(dir([]))
+
+# 列表的所有方法
+print(dir({}))
+
+# 字符串的所有方法
+print(dir(''))
+
+# 列表拥有的方法
+print(dir(range(10)))
+
+# 双下的方法
+print([1].__add__([2]))
+print([1] + [2])
+
+
+# 可迭代的对象都有`__iter__`
+ret = set(dir([])) & set(dir({})) & set(dir('')) & set(dir(range(10)))
+print(ret) # iterable
+
+
+print('__iter__' in dir(int)) # False
+print('__iter__' in dir(bool)) # False
+print('__iter__' in dir(list)) # True
+print('__iter__' in dir(dict)) # True
+print('__iter__' in dir(set)) # True
+print('__iter__' in dir(tuple)) # True
+print('__iter__' in dir(enumerate([]))) # True
+print('__iter__' in dir(range(1))) # True
+
+# 能被for循环的数据类型就一定拥有__iter__方法
+
+
+
+# 列表执行了__iter__()之后的返回值就是一个迭代器
+print([].__iter__())
+
 ```
