@@ -98,5 +98,13 @@ fun(3) # {1:'v',2:'v',3:'v'}
 
 对局部也是对最近一层有影响
 
-## 装饰器
+## return
+
+函数里没有 return, 会默认返回一个 None
+
+如果return多个对象，那么 Python 会把多个对象封装成一个元组作为一个一个整体结果输出
+
+## 作用域
+
+LEGB: Local < Enclosing < Global < Builtin
 
