@@ -6,7 +6,7 @@
 
 [Pycharm 下载](http://jetbrains.com)
 
-- pycharm 配置
+## pycharm 配置
 
 Settings->Editor->File and Code Templats -> Python Script
 
@@ -23,17 +23,16 @@ Settings->Editor->File and Code Templats -> Python Script
 
 ### 方法2
 
+``` shell
 文件首行带有解释器声明
-
-`#!/usr/bin/env python` 或 `#!/usr/bin/python3`
+#!/usr/bin/env python 或 #!/usr/bin/python3
 
 授予文件有执行权限：
-
-`$ chomw u+ python_file.py`
+$ chomw u+ python_file.py
 
 执行文件
-
-`$ ./python_file.py`
+$ ./python_file.py
+```
 
 ## Python 2 or Python 3
 
@@ -88,6 +87,7 @@ Settings->Editor->File and Code Templats -> Python Script
 2. 解码[encode]转换为 utf-8 编码
 
 > 默认是 utf-8
+
 `sys.getdefaultencoding()`
 
 ## Python 种类
@@ -99,39 +99,32 @@ Settings->Editor->File and Code Templats -> Python Script
 
 ## Python 多版本环境搭建 - CentOS OS 安装开发环境
 
-`# yum -y groupinstall "Development Tools"`
-`# yum -y install readline readline-devel readline-static openssl openssl-devel openssl-static zlib-devel bzip2-devel ncurses-devel sqlite-devel  tk-devel gdbm-devel db4-devel libpcap-devel xz-devel bzip2-devel bzip2-libs git build-essential zlib1g-dev libssl-dev libsqlite3-dev libbz2-dev libreadline-dev libreadline-dev`
+``` shell
+# yum -y groupinstall "Development Tools"
+# yum -y install readline readline-devel readline-static openssl openssl-devel openssl-static zlib-devel bzip2-devel ncurses-devel sqlite-devel  tk-devel gdbm-devel db4-devel libpcap-devel xz-devel bzip2-devel bzip2-libs git build-essential zlib1g-dev libssl-dev libsqlite3-dev libbz2-dev libreadline-dev libreadline-dev
+```
 
 ### pyenv 安装
 
 ``` shell
 # git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 
-将 `PYENV_ROOT` 和 `pyenv init` 加入 bash的 `~/.bashrc
-
+将 PYENV_ROOT 和 pyenv init 加入 bash的 ~/.bashrc
 # echo 'export PATH=~/.pyenv/bin:$PATH' >> ~/.bashrc
 # echo 'export PYENV_ROOT=~/.pyenv' >> ~/.bashrc
 # echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 # source ~/.bashrc
-```
 
-- 查看可安装的版本
-
-``` shell
+查看可安装的版本
 # pyenv intsall --list`
 ```
 
-2.7.8 # Python 2最新版本
-
-3.4.1 # Python 3最新版本
-
-anaconda-2.0.1 # 支持Python 2.6和2.7
-
-anaconda3-2.0.1 # 支持Python 3.3和3.4
+- anaconda-2.0.1  支持Python 2.6和2.7
+- anaconda3-2.0.1 支持Python 3.3和3.4
 
 其中形如x.x.x这样的只有版本号的为Python官方版本，其他的形如xxxxx-x.x.x这种既有名称又有版本后的属于“衍生版”或发行版
 
-- 安装指定版本: `# pyenv install 3.5.4`
+安装指定版本: `# pyenv install 3.5.4`
 
 该命令会从github上下载python的源代码，并解压到/tmp目录下，然后在/tmp中执行编译工作。若依赖包没有安装，则会出现编译错误，需要在安装依赖包后重新执行该命令对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版，pyenv install anaconda-2.1.0安装2.x版本，pyenv install anaconda3-2.1.0安装3.x版本
 Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站下载，并将下载得到的文件放在~/.pyenv/cache目录下，则pyenv不会重复下载
@@ -194,82 +187,86 @@ Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站
 - 环境升级不影响其他应用，也不会影响全局的Python 环境
 - 防止系统中出现包管理混乱和版本的冲突
 
+``` shell
 setup
-
-`# pip install virtualenv`
+# pip install virtualenv
 
 create env
-
-``` shell
-# virtualenv virtualName`
-# cd virtualName/Scripts`
-# activate.bat` 进入虚拟环境
-# pip list`
-# deactive.bat` 退出虚拟环境
+# virtualenv virtualName
+# cd virtualName/Scripts
+# activate.bat 进入虚拟环境
+# pip list
+# deactive.bat 退出虚拟环境
 ```
 
 ### virtualenvwrapper-win(Windows OS 加 win)
 
 ``` shell
 # pip install virtualenvwrapper
+
+创建虚拟环境 -> 自动进入虚拟环境
+# mkvirtualenv virenv
+
+删除虚拟环境 - 自动进入虚拟环境:
+# rmvirtualenv virenv
+
+推出虚拟环境
+scripts> deactivate
+
+查看有哪些虚拟环境
+scripts> workon
+
+进入虚拟环境
+scripts> workon virenv
+
+显示开发包
+(virenv) > pip list
+
+安装开发包
+# pip install requests
+
+卸载开发包
+# pip uninstall requests
 ```
-
-创建虚拟环境 - 自动进入虚拟环境: `# mkvirtualenv virenv`
-
-删除虚拟环境 - 自动进入虚拟环境:`# rmvirtualenv virenv`
-
-推出虚拟环境:`scripts> deactivate`
-
-查看有哪些虚拟环境: `scripts> workon`
-
-进入虚拟环境: `scripts> workon virenv`
-
-显示开发包:`(virenv) > pip list`
-
-安装开发包: `pip install requests`
-
-卸载开发包:`pip uninstall requests`
 
 ### pyenv-virtual
 
 > pyenv-virtual 是 pyenv 的插件，支持管理多个 virtualenv
 
-Setup:
-
 ``` shell
+Setup
 # git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
 # echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
-```
 
-Create virtualenv: `# pyenv virtualenv 版本号 虚拟环境名称`
+Create virtualenv
+# pyenv virtualenv 版本号 虚拟环境名称
 
-Delete virtualenv:`# pyenv uninstall 虚拟环境名称`
+Delete virtualenv
+# pyenv uninstall 虚拟环境名称
 
-列表 virtualenv: `# pyenv virtualenvs`
+列表 virtualenv
+# pyenv virtualenvs
 
 激活/禁用 virtualenv
-
-``` shell
 # pyenv active <virtualev-name>
 # pyenv deactivate
-```
 
 Create Virtual Env
-
-``` shell
 # pyenv virtualenv 3.5.4 venv-3.5.4
 # mkdir myproject && cd myproject
 # pyenv local venv-3.5.4
-```
 
-pyenv-virtualenv: `deactivate`
+pyenv-virtualenv
+# deactivate
 
-pyenv-virtualenv: `activate venv-3.5.1`
+pyenv-virtualenv
+# activate venv-3.5.1
 
-只要我们进入myproject目录，就会自动激活virtualenv，退出myproject目录，就会关闭virtualenv。
+只要我们进入myproject目录，就会自动激活virtualenv，退出myproject目录，就会关闭virtualenv
 
 如果要关闭自动激活，可以运行命令pyenv deactivate，要重新启用的话，运行pyenv activate 虚拟环境名
+```
 
 ### 安装 ipython
 
@@ -349,8 +346,8 @@ impor pdb
 pdb.set_trace()
 ```
 
-``` sshell
-$ python3 name.py
+``` shell
+# python3 name.py
 ```
 
 自动停在 `pdb.run("test(11,22)")` 之上
@@ -369,8 +366,11 @@ c = "ccc"
 
 ## Anaconda
 
-[anaconda 官网](https://www.anaconda.com)
+> [anaconda 官网](https://www.anaconda.com)
 
-setup: `$ conda install 库名`
+``` shell
+setup
+# conda install 库名
 
-update: `$ conda update 库名`
+update
+# conda update 库名

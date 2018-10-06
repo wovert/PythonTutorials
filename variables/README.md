@@ -20,19 +20,17 @@
 
 ## 定义变量
 
-单引号定义: `msg='hello'`
+- 单引号定义: `msg='hello'`
+- 双引号定义: `msg="hello"`
+- 三个单引号定义
 
-双引号定义: `msg="hello"`
-
-三个单引号定义
-
-``` Python
+``` python
 msg='''
 hello
 world'''
 ```
 
-三个双引号定义
+- 三个双引号定义
 
 ``` Python
 msg="""
@@ -42,8 +40,8 @@ world"""
 
 ## 销毁变量
 
-- del 变量名
-- age = nil
+- `del 变量名`
+- `age = nil`
 
 ## 注释
 
