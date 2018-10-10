@@ -577,3 +577,10 @@ print('__iter__' in dir(range(1))) # True
 print([].__iter__())
 
 ```
+
+### Counter
+
+### 有序字典 orderedDict
+
+### 默认字典 defaultDict
+
