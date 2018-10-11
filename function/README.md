@@ -108,3 +108,88 @@ fun(3) # {1:'v',2:'v',3:'v'}
 
 LEGB: Local < Enclosing < Global < Builtin
 
+## 内置函数 Buil-in functions
+
+> 不需要导入模块就可以使用的函数
+
+- abs()
+- all([1,2,3,4]) 所有元素都是真的时候返回 True
+  - None => False
+  - "" => False
+  - [] => False
+  - () => False
+  - {} => False
+- any(['',1,{}]) 只有有一个真的则返回 True
+- ascii() 返回字符串格式
+  - `ascii(8) == int.__repr__()`
+- bin(10) # '0b1010'
+- bool()
+- bytearray("微明", encoding="utf-8") # 返回字节数组 b'\xe5\xbe\xae\xe6\x98\x8e'
+- bytes("微明", encoding="utf-8") # 返回字节 b'\xe5\xbe\xae\xe6\x98\x8e'
+- callable(变量名) 变量是否可执行函数True
+- chr(99) # 'c'
+  - `import random`
+  - `random.randint(1,99) # 验证码例子`
+- ord('c') # 99
+- classmethod()
+- compile(filename) 编译
+  - filename文件的内容字符串编译成python语言
+- complex()
+- delattr() 反射时使用
+- dict()
+- dir() 返回列表的key
+- divmod()
+- enumerate()
+  - `li = ['alex','eric','lily']`
+  - `for i,item in enumerate(li, 1):print(i,item)`
+- eval('6*8')
+- exec()
+- filter(func, list) 过滤元素
+- float()
+- format() == int.__format__()`
+- frozenset() 不能增加修改set
+- getattr()
+- globals() 当前所有的全局变量
+- hasattr()
+- hash()
+- help()
+- hex()
+- id()
+- input()
+- int()
+- isinstance()
+- issubclass()
+- iter()
+- len()
+- list()
+- locals() 所有的局部变量
+- map()
+  - li = map(lambda x:x+100, [11,22,33])
+  - print(list(li))
+- max(1,23,33)
+- memoryview()
+- min()
+- next()
+- object()
+- oct()
+- open()
+- pow()
+- print()
+- property()
+- range(0,10) 迭代器，不到10，循环时创建数字
+- repr()
+- reversed()
+- round()
+- set()
+- setattr()
+- slice()
+- sorted()
+- staticmethod()
+- str()
+- sum()
+- super()
+- tuple()
+- type()
+- vars() 返回key:value
+- zip()
+- `__import__()`
