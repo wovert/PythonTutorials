@@ -193,3 +193,20 @@ LEGB: Local < Enclosing < Global < Builtin
 - vars() 返回key:value
 - zip()
 - `__import__()`
+
+## 匿名函数-lamda
+
+> `lambda 参数,参数2 : 返回值表达式` 和五个特殊的内置函数可以结合使用
+
+## 递归函数
+
+> 在函数中调用自身函数
+
+- 最大递归深度默认是997/998 —— 是python从内存角度出发做得限制
+
+- 如果递归次数太多，就不适合使用递归来解决问题
+- 递归的缺点 ： 占内存
+- 递归的优点：  会让代码变简单
+
+RecursionError: maximum recursion depth exceeded while calling a Python object 递归的错误，超过了递归的最大深度
+
