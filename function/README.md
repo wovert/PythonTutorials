@@ -209,4 +209,3 @@ LEGB: Local < Enclosing < Global < Builtin
 - 递归的优点：  会让代码变简单
 
 RecursionError: maximum recursion depth exceeded while calling a Python object 递归的错误，超过了递归的最大深度
-
