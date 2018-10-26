@@ -99,6 +99,36 @@ $ ./python_file.py
 
 ## Python 多版本环境搭建 - CentOS OS 安装开发环境
 
+### Python 多版本共存配置
+
+- 关于环境变量：可执行文件包含到PATH环境变量中
+- 安装python多个版本之后，在python.exe和pip.exe所在目录下复制一份python-版本名.exe和pip-版本名.exe文件。按照优先顺序版命令所在目录追加到path 环境变量当中。
+
+``` shell
+# echo $PATH
+# whereis python
+# ln -s /usr/bin/python3.5 /usr/bin/python3
+# ln -s /usr/bin/python2.7 /usr/bin/python2
+# python3
+# python2
+
+配置默认python
+# rm /usr/bin/python
+# ln -s /usr/bin/python3.5 /usr/bin/python
+```
+
+- Pycharm配置
+  - 新建项目(Pure Python -> Interpreter: 选择版本)
+  - 新建hello.py 文件之后执行文件
+  - 在 run 窗口显示运行python 版本
+
+  - 更换 Python 版本
+  - Settings -> Project: 名字 -> Project Interpreter -> 选择版本 -> OK
+  - 任务栏中切换版本切换
+  - 运行程序，在run 窗口中显示相应切换版本
+
+
+
 ``` shell
 # yum -y groupinstall "Development Tools"
 # yum -y install readline readline-devel readline-static openssl openssl-devel openssl-static zlib-devel bzip2-devel ncurses-devel sqlite-devel  tk-devel gdbm-devel db4-devel libpcap-devel xz-devel bzip2-devel bzip2-libs git build-essential zlib1g-dev libssl-dev libsqlite3-dev libbz2-dev libreadline-dev libreadline-dev
