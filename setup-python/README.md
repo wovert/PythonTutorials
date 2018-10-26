@@ -127,8 +127,6 @@ $ ./python_file.py
   - 任务栏中切换版本切换
   - 运行程序，在run 窗口中显示相应切换版本
 
-
-
 ``` shell
 # yum -y groupinstall "Development Tools"
 # yum -y install readline readline-devel readline-static openssl openssl-devel openssl-static zlib-devel bzip2-devel ncurses-devel sqlite-devel  tk-devel gdbm-devel db4-devel libpcap-devel xz-devel bzip2-devel bzip2-libs git build-essential zlib1g-dev libssl-dev libsqlite3-dev libbz2-dev libreadline-dev libreadline-dev
@@ -404,3 +402,184 @@ setup
 
 update
 # conda update 库名
+```
+
+## 爬虫常用库的安装
+
+### Windows 安装过程
+
+#### 检查 urllib 和 re 内置库
+
+``` py
+>>> import urllib
+>>> import urllib.request
+>>> urllib.request.urlopen('http://www.baidu.com')
+
+>>> import re
+```
+
+#### 安装 requests 库
+
+``` py
+> pip3.6 install requests
+> python3
+> import requests
+> requests.get('http://www.wovert.com')
+```
+
+#### 安装 selenium 库(自动化测试库-驱动浏览器)
+
+``` py
+> pip3.6 install selenium
+> python3
+> from selenium import webdriver
+提示找不到chromedriver程序
+```
+
+#### 下载安装 chromedriver 程序
+
+`chromedriver.exe` 文件放到 `python36/Scripts`目录下
+
+``` py
+>>> from selenium import webdriver
+>>> driver = webdriver.Chrome()
+闪退原因：chromedriver与chrome版本不兼容，下载兼容chrome浏览器的chromedriver版本
+
+>>> driver.get('https://www.python.org')
+
+打印网页源代码
+>>> driver.page_source
+
+```
+
+#### 无界面浏览器 [phantomjs.org](http://phantomjs.org)
+
+1. 解压文件找到 phantomjs.exe
+2. phantomjs.exe所在目录，配置到PATH环境变量
+
+``` shell
+# phantomjs
+phantomjs > conosle.log('hello world')
+```
+
+``` py
+>>> from selenium import webdriver
+>>> driver = webdriver.PhantomJS()
+>>> driver.get('https://www.python.org')
+>>> driver.page_source
+```
+
+#### 安装 lxml 库(xpath解析库)
+
+``` py
+>>> pip3.6 install lxml
+下载很慢
+```
+
+- 解决方案:
+  - [lxml](https://pypi.python.org/pypi/lxml/3.7.3)
+- 下载文件是`lxml-xxxx.whl`，但前提是必须先安装 `pip3 install wheel`
+
+``` py
+>>> pip3.6 install wheel
+>>> pip3.6 uninstall lxml
+>>> pip3.6 install C:\donwload\lxml-xxx.whl
+```
+
+#### 安装 beautifulsoup
+
+> 依赖于 lxml库
+
+``` py
+>>> pip3.6 install beautifulsoup4
+>>> from bs4 import BeautifulSoup
+>>> soup = BeautifulSoup('<html></html>','lxml')
+```
+
+#### 安装 pyquery
+
+``` py
+>>> pip3.6 install pyquery
+>>> from pyquery import PyQuery as pq
+>>> doc = pq('<html>hello</html>')
+>>> result = doc('html').text()
+>>> result
+hello
+```
+
+#### 安装 pymysql(用于python3.6)
+
+``` py
+>>> pip3.6 install pymysql
+>>> python
+>>> import pymysql
+>>> con = pymysql.connect(host='localhost',user='root',password='123456',port=3306, db='mysql')
+>>> cursor = con.cursor()
+>>> cursor.execute('select * from db')
+>>> cursor.fetchone()
+```
+
+#### 安装 pymongo
+
+``` py
+>>> pip3.6 install pymongo
+>>> python
+>>> import pymongo
+>>> client = pymongo.MongoClient('localhost')
+>>> db = client['newtestdb']
+>>> db['table'].insert({'name':'Alice'})
+>>> db['table'].find_one({'name':'Alice'})
+```
+
+#### 安装 redis
+
+> 用于分布式爬虫队列
+
+``` py
+>>> pip3.6 install redis
+>>> python
+>>> import redis
+>>> r = redis.REdis('localhost',6377)
+>>> r.set('name', 'Alice')
+>>> r.get('name')
+b'Alice'
+```
+
+#### 安装 flask
+
+> Web框架库
+
+``` py
+>>> pip3.6 install flask
+>>> python
+>>> import flask
+```
+
+#### 安装 django
+
+> Web服务器框架
+
+``` py
+>>> pip3.6 install django
+>>> python
+>>> import django
+```
+
+#### 安装 jupyter
+
+> 记事本库，编写markdown文档，依赖于ipython库
+
+``` cmd
+> jupyter notebook
+打开浏览器创建文件并输入测试代码并运行，会输出运行结果
+
+### title
+
+Ctrl + Enter 保存
+```
+
+### Linux/Mac 安装
+
+``` sh
+# pip3 install requests selenium beautifulsoup4 pyquery pymysql pymongo redis flask django jupyter
+```
