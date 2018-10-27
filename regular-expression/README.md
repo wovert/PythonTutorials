@@ -101,3 +101,12 @@ print(ret) #结果 ： ['eva', 'egon', 'yuan']
 ret=re.split("(\d+)","eva3egon4yuan")
 print(ret) #结果 ： ['eva', '3', 'egon', '4', 'yuan']
 ```
+
+- `?P<id>` 是给 分组\d+起的名字为id
+- `<em .*?>(?P<id>\d+).*?<span class="title">`
+- '8-2*5/3 + 7 /3*99/4*2998 +10 * 568/14' 从一个没有括号的表达式中取 */法 == 正则表达式
+
+## 转义问题
+
+`re.findall(r'\\s', r'\s')`
+

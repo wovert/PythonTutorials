@@ -4,13 +4,11 @@
 
 能够直接运行的模块文件通常称作脚本（即程序的顶层文件）
 
-``` file.py
-#!/usr/bin/python
-
-import platform
-
-print(platform.uname())
-
+``` sh
+# vim file.py
+  #!/usr/bin/python
+  import platform
+  print(platform.uname())
 ```
 
 程序由模块构成，模块包含语句，语句包含表达式，表达式建立并处理对象

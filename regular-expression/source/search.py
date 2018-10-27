@@ -29,3 +29,6 @@ print(rd) #
 print(next(rd).group()) # 查看第一个结果
 print(next(rd).group()) # 查看第二个结果
 print([i.group()] for i in rd) # 查看剩余的左右结果
+
+
+
