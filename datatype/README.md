@@ -577,3 +577,25 @@ print('__iter__' in dir(range(1))) # True
 print([].__iter__())
 
 ```
+
+### Counter
+
+### 有序字典 orderedDict
+
+### 默认字典 defaultDict
+
+### 可命名元祖(namedtuple)
+
+> 创建一个包含tuple 所有功能以及其他功能的类型
+
+### 队列(deque)
+
+> Python 内置的一个线程安全的双向队列
+
+- 单向队列
+- 双向队列
+
+## 深浅拷贝
+
+- 对于数字和字符串类型，深浅拷贝都是同一个内存地址
+

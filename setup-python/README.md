@@ -6,7 +6,7 @@
 
 [Pycharm 下载](http://jetbrains.com)
 
-- pycharm 配置
+## pycharm 配置
 
 Settings->Editor->File and Code Templats -> Python Script
 
@@ -23,17 +23,16 @@ Settings->Editor->File and Code Templats -> Python Script
 
 ### 方法2
 
+``` shell
 文件首行带有解释器声明
-
-`#!/usr/bin/env python` 或 `#!/usr/bin/python3`
+#!/usr/bin/env python 或 #!/usr/bin/python3
 
 授予文件有执行权限：
-
-`$ chomw u+ python_file.py`
+$ chomw u+ python_file.py
 
 执行文件
-
-`$ ./python_file.py`
+$ ./python_file.py
+```
 
 ## Python 2 or Python 3
 
@@ -88,6 +87,7 @@ Settings->Editor->File and Code Templats -> Python Script
 2. 解码[encode]转换为 utf-8 编码
 
 > 默认是 utf-8
+
 `sys.getdefaultencoding()`
 
 ## Python 种类
@@ -99,39 +99,60 @@ Settings->Editor->File and Code Templats -> Python Script
 
 ## Python 多版本环境搭建 - CentOS OS 安装开发环境
 
-`# yum -y groupinstall "Development Tools"`
-`# yum -y install readline readline-devel readline-static openssl openssl-devel openssl-static zlib-devel bzip2-devel ncurses-devel sqlite-devel  tk-devel gdbm-devel db4-devel libpcap-devel xz-devel bzip2-devel bzip2-libs git build-essential zlib1g-dev libssl-dev libsqlite3-dev libbz2-dev libreadline-dev libreadline-dev`
+### Python 多版本共存配置
+
+- 关于环境变量：可执行文件包含到PATH环境变量中
+- 安装python多个版本之后，在python.exe和pip.exe所在目录下复制一份python-版本名.exe和pip-版本名.exe文件。按照优先顺序版命令所在目录追加到path 环境变量当中。
+
+``` shell
+# echo $PATH
+# whereis python
+# ln -s /usr/bin/python3.5 /usr/bin/python3
+# ln -s /usr/bin/python2.7 /usr/bin/python2
+# python3
+# python2
+
+配置默认python
+# rm /usr/bin/python
+# ln -s /usr/bin/python3.5 /usr/bin/python
+```
+
+- Pycharm配置
+  - 新建项目(Pure Python -> Interpreter: 选择版本)
+  - 新建hello.py 文件之后执行文件
+  - 在 run 窗口显示运行python 版本
+
+  - 更换 Python 版本
+  - Settings -> Project: 名字 -> Project Interpreter -> 选择版本 -> OK
+  - 任务栏中切换版本切换
+  - 运行程序，在run 窗口中显示相应切换版本
+
+``` shell
+# yum -y groupinstall "Development Tools"
+# yum -y install readline readline-devel readline-static openssl openssl-devel openssl-static zlib-devel bzip2-devel ncurses-devel sqlite-devel  tk-devel gdbm-devel db4-devel libpcap-devel xz-devel bzip2-devel bzip2-libs git build-essential zlib1g-dev libssl-dev libsqlite3-dev libbz2-dev libreadline-dev libreadline-dev
+```
 
 ### pyenv 安装
 
 ``` shell
 # git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 
-将 `PYENV_ROOT` 和 `pyenv init` 加入 bash的 `~/.bashrc
-
+将 PYENV_ROOT 和 pyenv init 加入 bash的 ~/.bashrc
 # echo 'export PATH=~/.pyenv/bin:$PATH' >> ~/.bashrc
 # echo 'export PYENV_ROOT=~/.pyenv' >> ~/.bashrc
 # echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 # source ~/.bashrc
-```
 
-- 查看可安装的版本
-
-``` shell
+查看可安装的版本
 # pyenv intsall --list`
 ```
 
-2.7.8 # Python 2最新版本
-
-3.4.1 # Python 3最新版本
-
-anaconda-2.0.1 # 支持Python 2.6和2.7
-
-anaconda3-2.0.1 # 支持Python 3.3和3.4
+- anaconda-2.0.1  支持Python 2.6和2.7
+- anaconda3-2.0.1 支持Python 3.3和3.4
 
 其中形如x.x.x这样的只有版本号的为Python官方版本，其他的形如xxxxx-x.x.x这种既有名称又有版本后的属于“衍生版”或发行版
 
-- 安装指定版本: `# pyenv install 3.5.4`
+安装指定版本: `# pyenv install 3.5.4`
 
 该命令会从github上下载python的源代码，并解压到/tmp目录下，然后在/tmp中执行编译工作。若依赖包没有安装，则会出现编译错误，需要在安装依赖包后重新执行该命令对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版，pyenv install anaconda-2.1.0安装2.x版本，pyenv install anaconda3-2.1.0安装3.x版本
 Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站下载，并将下载得到的文件放在~/.pyenv/cache目录下，则pyenv不会重复下载
@@ -194,82 +215,86 @@ Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站
 - 环境升级不影响其他应用，也不会影响全局的Python 环境
 - 防止系统中出现包管理混乱和版本的冲突
 
+``` shell
 setup
-
-`# pip install virtualenv`
+# pip install virtualenv
 
 create env
-
-``` shell
-# virtualenv virtualName`
-# cd virtualName/Scripts`
-# activate.bat` 进入虚拟环境
-# pip list`
-# deactive.bat` 退出虚拟环境
+# virtualenv virtualName
+# cd virtualName/Scripts
+# activate.bat 进入虚拟环境
+# pip list
+# deactive.bat 退出虚拟环境
 ```
 
 ### virtualenvwrapper-win(Windows OS 加 win)
 
 ``` shell
 # pip install virtualenvwrapper
+
+创建虚拟环境 -> 自动进入虚拟环境
+# mkvirtualenv virenv
+
+删除虚拟环境 - 自动进入虚拟环境:
+# rmvirtualenv virenv
+
+推出虚拟环境
+scripts> deactivate
+
+查看有哪些虚拟环境
+scripts> workon
+
+进入虚拟环境
+scripts> workon virenv
+
+显示开发包
+(virenv) > pip list
+
+安装开发包
+# pip install requests
+
+卸载开发包
+# pip uninstall requests
 ```
-
-创建虚拟环境 - 自动进入虚拟环境: `# mkvirtualenv virenv`
-
-删除虚拟环境 - 自动进入虚拟环境:`# rmvirtualenv virenv`
-
-推出虚拟环境:`scripts> deactivate`
-
-查看有哪些虚拟环境: `scripts> workon`
-
-进入虚拟环境: `scripts> workon virenv`
-
-显示开发包:`(virenv) > pip list`
-
-安装开发包: `pip install requests`
-
-卸载开发包:`pip uninstall requests`
 
 ### pyenv-virtual
 
 > pyenv-virtual 是 pyenv 的插件，支持管理多个 virtualenv
 
-Setup:
-
 ``` shell
+Setup
 # git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
 # echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
-```
 
-Create virtualenv: `# pyenv virtualenv 版本号 虚拟环境名称`
+Create virtualenv
+# pyenv virtualenv 版本号 虚拟环境名称
 
-Delete virtualenv:`# pyenv uninstall 虚拟环境名称`
+Delete virtualenv
+# pyenv uninstall 虚拟环境名称
 
-列表 virtualenv: `# pyenv virtualenvs`
+列表 virtualenv
+# pyenv virtualenvs
 
 激活/禁用 virtualenv
-
-``` shell
 # pyenv active <virtualev-name>
 # pyenv deactivate
-```
 
 Create Virtual Env
-
-``` shell
 # pyenv virtualenv 3.5.4 venv-3.5.4
 # mkdir myproject && cd myproject
 # pyenv local venv-3.5.4
-```
 
-pyenv-virtualenv: `deactivate`
+pyenv-virtualenv
+# deactivate
 
-pyenv-virtualenv: `activate venv-3.5.1`
+pyenv-virtualenv
+# activate venv-3.5.1
 
-只要我们进入myproject目录，就会自动激活virtualenv，退出myproject目录，就会关闭virtualenv。
+只要我们进入myproject目录，就会自动激活virtualenv，退出myproject目录，就会关闭virtualenv
 
 如果要关闭自动激活，可以运行命令pyenv deactivate，要重新启用的话，运行pyenv activate 虚拟环境名
+```
 
 ### 安装 ipython
 
@@ -349,8 +374,8 @@ impor pdb
 pdb.set_trace()
 ```
 
-``` sshell
-$ python3 name.py
+``` shell
+# python3 name.py
 ```
 
 自动停在 `pdb.run("test(11,22)")` 之上
@@ -369,8 +394,192 @@ c = "ccc"
 
 ## Anaconda
 
-[anaconda 官网](https://www.anaconda.com)
+> [anaconda 官网](https://www.anaconda.com)
 
-setup: `$ conda install 库名`
+``` shell
+setup
+# conda install 库名
 
-update: `$ conda update 库名`
+update
+# conda update 库名
+```
+
+## 爬虫常用库的安装
+
+### Windows 安装过程
+
+#### 检查 urllib 和 re 内置库
+
+``` py
+>>> import urllib
+>>> import urllib.request
+>>> urllib.request.urlopen('http://www.baidu.com')
+
+>>> import re
+```
+
+#### 安装 requests 库
+
+``` py
+> pip3.6 install requests
+> python3
+> import requests
+> requests.get('http://www.wovert.com')
+```
+
+#### 安装 selenium 库(自动化测试库-驱动浏览器)
+
+``` py
+> pip3.6 install selenium
+> python3
+> from selenium import webdriver
+提示找不到chromedriver程序
+```
+
+#### 下载安装 chromedriver 程序
+
+`chromedriver.exe` 文件放到 `python36/Scripts`目录下
+
+``` py
+>>> from selenium import webdriver
+>>> driver = webdriver.Chrome()
+闪退原因：chromedriver与chrome版本不兼容，下载兼容chrome浏览器的chromedriver版本
+
+>>> driver.get('https://www.python.org')
+
+打印网页源代码
+>>> driver.page_source
+
+```
+
+#### 无界面浏览器 [phantomjs.org](http://phantomjs.org)
+
+1. 解压文件找到 phantomjs.exe
+2. phantomjs.exe所在目录，配置到PATH环境变量
+
+``` shell
+# phantomjs
+phantomjs > conosle.log('hello world')
+```
+
+``` py
+>>> from selenium import webdriver
+>>> driver = webdriver.PhantomJS()
+>>> driver.get('https://www.python.org')
+>>> driver.page_source
+```
+
+#### 安装 lxml 库(xpath解析库)
+
+``` py
+>>> pip3.6 install lxml
+下载很慢
+```
+
+- 解决方案:
+  - [lxml](https://pypi.python.org/pypi/lxml/3.7.3)
+- 下载文件是`lxml-xxxx.whl`，但前提是必须先安装 `pip3 install wheel`
+
+``` py
+>>> pip3.6 install wheel
+>>> pip3.6 uninstall lxml
+>>> pip3.6 install C:\donwload\lxml-xxx.whl
+```
+
+#### 安装 beautifulsoup
+
+> 依赖于 lxml库
+
+``` py
+>>> pip3.6 install beautifulsoup4
+>>> from bs4 import BeautifulSoup
+>>> soup = BeautifulSoup('<html></html>','lxml')
+```
+
+#### 安装 pyquery
+
+``` py
+>>> pip3.6 install pyquery
+>>> from pyquery import PyQuery as pq
+>>> doc = pq('<html>hello</html>')
+>>> result = doc('html').text()
+>>> result
+hello
+```
+
+#### 安装 pymysql(用于python3.6)
+
+``` py
+>>> pip3.6 install pymysql
+>>> python
+>>> import pymysql
+>>> con = pymysql.connect(host='localhost',user='root',password='123456',port=3306, db='mysql')
+>>> cursor = con.cursor()
+>>> cursor.execute('select * from db')
+>>> cursor.fetchone()
+```
+
+#### 安装 pymongo
+
+``` py
+>>> pip3.6 install pymongo
+>>> python
+>>> import pymongo
+>>> client = pymongo.MongoClient('localhost')
+>>> db = client['newtestdb']
+>>> db['table'].insert({'name':'Alice'})
+>>> db['table'].find_one({'name':'Alice'})
+```
+
+#### 安装 redis
+
+> 用于分布式爬虫队列
+
+``` py
+>>> pip3.6 install redis
+>>> python
+>>> import redis
+>>> r = redis.REdis('localhost',6377)
+>>> r.set('name', 'Alice')
+>>> r.get('name')
+b'Alice'
+```
+
+#### 安装 flask
+
+> Web框架库
+
+``` py
+>>> pip3.6 install flask
+>>> python
+>>> import flask
+```
+
+#### 安装 django
+
+> Web服务器框架
+
+``` py
+>>> pip3.6 install django
+>>> python
+>>> import django
+```
+
+#### 安装 jupyter
+
+> 记事本库，编写markdown文档，依赖于ipython库
+
+``` cmd
+> jupyter notebook
+打开浏览器创建文件并输入测试代码并运行，会输出运行结果
+
+### title
+
+Ctrl + Enter 保存
+```
+
+### Linux/Mac 安装
+
+``` sh
+# pip3 install requests selenium beautifulsoup4 pyquery pymysql pymongo redis flask django jupyter
+```

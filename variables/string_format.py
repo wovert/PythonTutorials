@@ -24,3 +24,9 @@ rate:3%%
 ''' % (name, int(age), job, float(salary))
 
 print(msg)
+
+number = 100
+print("number变量里的值是%d"%number)
+ 
+names = "东哥"
+print("名字是:%s"%names)
