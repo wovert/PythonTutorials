@@ -2,9 +2,9 @@
 
 ## 变量命名规则
 
-- 字母、数字和下划线组成
-- 不能以数字开头
-- 不能使用保留字、中文命令
+- 字母、数字和下划线组成且不能以数字开头
+- 不能使用python关键字和保留字
+  - 关键字：and,as,assort,break, class, continue,def, del,elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield
 - 区分大小写
 
 ## 变量名命名约定

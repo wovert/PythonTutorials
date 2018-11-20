@@ -358,7 +358,7 @@ Python语言的动态编译器，是Psyco的后继项目可以运行在Linux的3
 
 交互调试
 
-``` Python
+``` py
 def test(a,b):
   c = a + b
   return c
