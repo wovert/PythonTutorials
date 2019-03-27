@@ -1,16 +1,16 @@
 # 数据类型
 
-- 布尔型：bool
-- 数值: int
-- 字符串: str
-- 元组: tuple
-- 列表: list
-- 字典: dict
-- 集合: set
+- 布尔型：`bool`
+- 数值: `int`
+- 字符串: `str`
+- 元组: `tuple`
+- 列表: `list`
+- 字典: `dict`
+- 集合: `set`
 - 类类型
 - None
 
-- 深浅copy
+- 深浅 `copy`
 
 ## 布尔型 bool (不可变类型)
 
