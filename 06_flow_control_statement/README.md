@@ -33,4 +33,4 @@ else: # for 循环正常执行完成后执行 else 语句， break 退出时不�
 
 ## 三元表达式
 
-max = a if a > b else b
+`max = a if a > b else b`
