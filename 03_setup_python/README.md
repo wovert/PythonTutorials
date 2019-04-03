@@ -2,9 +2,107 @@
 
 ## Python 语言环境集成开发环境
 
-[Python 官方下载](http://python.org)
-
 [Pycharm 下载](http://jetbrains.com)
+
+## 编译安装 python
+
+### 0. 安装环境
+
+- CentOS7
+- Python-3.6.8
+
+### 1. 准备编译环境
+
+安装依赖包
+
+```sh
+安装静态库
+# yum install -y openssl-static
+
+注：如果不安装该静态库，会导致python的pip安装失败
+
+安装gcc
+# yum install -y gcc wget
+# yum groupinstall "Development tools"
+# yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+```
+
+### 2. 下载[Python 官方](http://python.org)
+
+```sh
+# cd /usr/local/src
+# wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tar.xz
+# tar xf Python-3.6.8.tar.xz
+```
+
+### 3. 编译安装
+
+- gcc：编译c语言源码
+- gcc-c++: 编译c++语言源码
+
+```sh
+进入安装目录
+# cd Python-3.6.8
+
+预编译
+# ./configure --enable-optimizations --prefix=/usr/local/python-3.6.8
+
+编译安装
+# make && make install
+```
+
+### 4. 环境变量配置
+
+```sh
+添加刚安装的python3版本的文件连接
+# ln -s /usr/local/python-3.6.8/bin/python3.6 /usr/bin/python36
+
+查看python3版本信息
+# python36 -V
+
+Python 3.6.8
+
+添加pip的文件连接
+查看pip版本信息
+
+# python36 -m pip -V
+pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
+
+注：如果输出提示没有pip，则安装pip
+添加pip的文件连接
+
+# ln -s /usr/local/python-3.6.8/bin/pip3 /usr/bin/pip3
+查看pip版本信息
+
+# pip3 -V
+pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
+```
+
+### 5. pip 安装
+
+```sh
+下载pip
+# wget https://bootstrap.pypa.io/get-pip.py
+
+安装pip
+# python36 get-pip.py
+
+查看pip版本信息
+# python3 -m pip -V
+pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
+
+将pip添加到环境变量
+# vim /etc/profile
+  ...
+  export PATH="/usr/local/python3/bin:$PATH"
+
+然后运行
+# source /etc/profile
+
+查看pip版本信息
+# pip3 -V
+pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
+```
 
 ## pycharm 配置
 
