@@ -192,7 +192,9 @@ str.index("good")    # ValueError: substring not found
 `newstr str.replace(old, new [,str.count(old)])`
 
 `newstr str.replace("llo","good")  # hegood world hegood hi ho are you`
+
 对原字符串没有影响
+
 count 替换次数
 
 ### 分割字符串：split, 自动识别空白字符
@@ -218,6 +220,7 @@ str.endswith("you")      # True
 ```
 
 - 上传文件
+
 1. 检查后缀名
 2. 检查内容
 
