@@ -1,4 +1,4 @@
-# 文件
+0# 文件
 
 ## 文件扩展名
 
@@ -31,8 +31,8 @@ f = open(filePath, mode='r', encoding='GBK')
 
 - str 转 bytes : `"中文".encode('utf-8')`
 
-``` PYTHON
-f = open(/path/to/SOMEFILE, mode, encode='utf8')
+``` py
+f = open('/path/to/SOMEFILE', mode, encode='utf8')
 data = f.read(5)  # 5个字符
 f.close()
 ```
@@ -41,7 +41,7 @@ f.close()
 
 - 读取所有行以列表显示
 
-``` PYTHON
+``` py
 for i in f.readlines():
   print(i.strip())
 ```

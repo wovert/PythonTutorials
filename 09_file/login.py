@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 username = input('请输入你要注册的用户名：')
 password = input('请输入你要注册的密码：')
 with open('list_of_info',mode='w',encoding='utf-8') as f:

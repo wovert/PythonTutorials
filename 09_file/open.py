@@ -1,7 +1,7 @@
 # 文件路径
 filePath = './cn.txt'
 # filePath = './README.md'
-filePath = '';
+# filePath = '';
 
 
 # f = open(filePath, mode='r', encoding='utf-8')
