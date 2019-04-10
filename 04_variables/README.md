@@ -58,3 +58,13 @@ world"""
 多行注释
 """
 ```
+
+## 引用赋值
+
+```py
+num = [10]
+num += 10 # 引用地址的值修改
+print(id(num))
+num = num + 10 # 使用新的内存空间
+print(id(num))
+```
