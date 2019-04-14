@@ -20,3 +20,4 @@ class Dog(object):
 #print(id(Dog))
  
 xtq = Dog()
+print(xtq)
