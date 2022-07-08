@@ -18,7 +18,7 @@
 
 True
 
-``` Python
+```py
 bool(1)
 bool(0b01))
 bool(-1.2)
@@ -129,7 +129,7 @@ bin(18) => 0b10001 => 5 bit
 
 - 字符串连接
 
-``` Python
+```py
 str=str1+str2
 str="===%s==="%(str1+str2)
 ```
@@ -144,7 +144,7 @@ str="===%s==="%(str1+str2)
 
 ### 字符串索引
 
-``` Python
+```py
 i=str[index]
 i=str[-lastIndex]
 ```
@@ -164,13 +164,13 @@ str=str[::-1]     # 反向取值，所有的，以步长为顺序决定开始索
 
 ### 字符串操作
 
-``` Python
+```py
 str = "hello world hello hi ho are you"
 ```
 
 ### 查找子串：find, rfind, index, rindex
 
-``` Python
+```py
 -1 | index str.find(search [, start=0, end=len(search)])
 str.find("llo")      # 2
 str.find("good")     # -1

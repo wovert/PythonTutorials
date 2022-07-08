@@ -8,4 +8,4 @@ def test2():
 test1()
 #test2()
 
-print("a=%d"%a)
+# print("a=%d"%a)

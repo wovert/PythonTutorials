@@ -2,7 +2,7 @@
 
 ## 条件判断
 
-``` Python
+```py
 if <condition> :
   statment
 elif <condition> :
@@ -13,14 +13,14 @@ else :
 
 ## 循环判断
 
-``` Python
+```py
 while <condition>:
   statement
 ```
 
 开始1到3，不包括3，步数1
 
-``` Python
+```py
 for i in range(1, 3, 1):
   print(i)
 else: # for 循环正常执行完成后执行 else 语句， break 退出时不会执行

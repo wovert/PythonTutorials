@@ -80,7 +80,8 @@ pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
 
 ### 5. pip 安装
 
-```sh
+``` sh
+
 下载pip
 # wget https://bootstrap.pypa.io/get-pip.py
 
@@ -176,8 +177,8 @@ $ ./python_file.py
 
 - Python2 字符编码默认是 ASCII
 - Python2 GBK 转换 UTF-8
-  - GBK 转换 Unicode 编码
-  - Unicode 转换 UTF-8 编码
+  1. GBK 转换 Unicode 编码
+  2. Unicode 转换 UTF-8 编码
 
 - Python2 GBK 转换 UTF-8 格式流程：默认是 ASCII
 
@@ -681,3 +682,13 @@ Ctrl + Enter 保存
 ``` sh
 # pip3 install requests selenium beautifulsoup4 pyquery pymysql pymongo redis flask django jupyter
 ```
+
+### 项目依赖扩展包生成文件
+
+1. 生成依赖扩展包依赖文件 `pip3 freeze > requirements.txt`
+2. 运行依赖扩展包 `pip3 install -r requirements.txt`
+
+### 升级 pip
+
+`python -m pip install --upgrade pip`
+
